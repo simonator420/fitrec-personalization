@@ -1,0 +1,64 @@
+{
+  "analysis": "feature-matched model ablation",
+  "run_date": "2026-10-13",
+  "status": "completed",
+  "stage": "post-lock secondary analysis",
+  "execution": {
+    "development_source": "outputs/preprocessed_devval_speedcap55_v1",
+    "test_source": "outputs/locked_test_v1/preprocessed",
+    "execution_copy": "/tmp/rp_original_runs_20261013",
+    "copy_note": "Executed on a local copy to avoid iCloud I/O stalls; sequence_index.csv SHA-256 values matched the original directories before execution.",
+    "script": "src/run_feature_matched_ablation.py",
+    "script_sha256": "ff6a44d94b0be8a20f5f7662f89364ed045e9d496fda834c21071916e4d23d93"
+  },
+  "input_sha256": {
+    "development_sequence_index_csv": "225484ebc97a9ee68e65da48dbac3ba16e3f812896c7312f66f908ae423afad3",
+    "test_sequence_index_csv": "43e9fe9f49731ad89f917df7f385f58fdd164c95a12e5b796803338754e0fcc2"
+  },
+  "parameters": {
+    "k": 5,
+    "coverage_threshold": 0.8,
+    "max_points_per_development_workout": 48,
+    "bootstrap_replicates": 10000,
+    "bootstrap_unit": "user",
+    "bootstrap_seed_scheme": "20261020 + summary index for mean MAE; 20261040 + summary index for feature-set differences; 20261060 + summary index for model differences",
+    "personalization": "intercept plus speed",
+    "personalization_ridge_alpha": 0.03,
+    "linear_population_ridge": 0.0001,
+    "base_features": ["speed_kmh", "speed_sq", "speed_lag30", "speed_lag60", "cumulative_speed", "elapsed_minutes", "log_elapsed"],
+    "extended_features": ["speed_kmh", "speed_sq", "speed_lag30", "speed_lag60", "cumulative_speed", "elapsed_minutes", "log_elapsed", "altitude_delta_m", "grade_30s", "vertical_rate_30s", "day_of_year_sin", "day_of_year_cos"],
+    "lightgbm": {
+      "objective": "regression_l1",
+      "n_estimators": 500,
+      "learning_rate": 0.04,
+      "num_leaves": 31,
+      "max_depth": -1,
+      "min_child_samples": 200,
+      "subsample": 0.85,
+      "colsample_bytree": 0.85,
+      "reg_lambda": 1.0,
+      "random_state": 20261012,
+      "n_jobs": -1,
+      "verbosity": -1
+    }
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.1.3",
+    "lightgbm": "4.6.0",
+    "scikit_learn": "1.6.1",
+    "matplotlib": "3.10.0",
+    "joblib": "1.4.2"
+  },
+  "validation": {
+    "users": 107,
+    "user_level_rows": 428,
+    "four_rows_per_user": true,
+    "four_expected_cells_per_user": true,
+    "one_identical_target_workout_per_user": true,
+    "all_mae_values_finite": true,
+    "linear_population_coefficients_finite": true,
+    "valid_points_match_locked_k5_benchmark": true
+  },
+  "runtime_warning_note": "NumPy/BLAS emitted floating-point status warnings during matrix multiplication and scikit-learn emitted feature-name warnings during array prediction. Independent coefficient recomputation was finite (maximum absolute coefficient 88.45), all 428 MAE values were finite, and all cohort/target/valid-point guardrails passed."
+}

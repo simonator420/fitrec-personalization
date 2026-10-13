@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the archived release."
+type: software
+title: "Personalizing Heart-Rate Prediction from Recent Workout History: A User-Disjoint FitRec Benchmark"
+authors:
+  - family-names: Salaj
+    given-names: Simon
+repository-code: "https://github.com/simonator420/fitrec-personalization"
+version: "v1.0.0"
+date-released: "2026-10-13"
+license: MIT
+keywords:
+  - heart-rate prediction
+  - personalization
+  - wearable data
+  - FitRec
+  - user-disjoint evaluation
+  - LightGBM
+  - LSTM
+abstract: "Minimal reproducibility package for a user-disjoint benchmark of heart-rate prediction from recent personal workout history using public FitRec/Endomondo running data."

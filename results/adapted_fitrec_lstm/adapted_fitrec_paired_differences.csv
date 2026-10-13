@@ -1,0 +1,4 @@
+comparison,users,mean_difference_bpm,paired_bootstrap_95ci_low,paired_bootstrap_95ci_high
+hierarchical_linear_minus_adapted_fitrec_lstm,107,1.04483029060591,0.07463405099717076,2.0233474750749316
+lightgbm_minus_adapted_fitrec_lstm,107,-0.11638623068651462,-1.1055781070192974,0.8311194894094528
+residual_tcn_minus_adapted_fitrec_lstm,107,-0.1689901293697428,-1.2891277277333366,0.9135873422484277

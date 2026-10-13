@@ -1,0 +1,65 @@
+{
+  "analysis": "adapted FitRec-style LSTM baseline",
+  "run_date": "2026-10-13",
+  "status": "completed",
+  "stage": "post-lock secondary analysis",
+  "label_guardrail": "Adapted FitRec-style LSTM; not an exact reproduction of Ni et al. (2019).",
+  "execution": {
+    "development_source": "outputs/preprocessed_devval_speedcap55_v1",
+    "test_source": "outputs/locked_test_v1/preprocessed",
+    "execution_copy": "/tmp/rp_original_runs_20261013",
+    "copy_note": "Executed on a local copy to avoid iCloud I/O stalls; sequence_index.csv SHA-256 values matched the original directories before execution.",
+    "script": "src/run_adapted_fitrec_lstm.py",
+    "script_sha256": "38fd7d2e5c5f28119a305c0e17491e1cf18bcba4706efe7e43f6674d45fb1652"
+  },
+  "input_sha256": {
+    "development_sequence_index_csv": "225484ebc97a9ee68e65da48dbac3ba16e3f812896c7312f66f908ae423afad3",
+    "test_sequence_index_csv": "43e9fe9f49731ad89f917df7f385f58fdd164c95a12e5b796803338754e0fcc2",
+    "reference_sequence_models_csv": "33266074f986a39f2d9fb8ed2b860dd23d2d1841a5bc07c47c8e8f728e54ded6",
+    "reference_hierarchical_csv": "ded0b49d641d8261f04f546885fa8e3cc4976c02d4854354f715720692db53ce"
+  },
+  "parameters": {
+    "k": 5,
+    "seed": 20261012,
+    "coverage_threshold": 0.8,
+    "validation_fraction": 0.2,
+    "validation_split_unit": "user",
+    "sequence_length_for_batched_training": 128,
+    "test_evaluation_grid": "original valid benchmark time points",
+    "history_feature_dimension": 6,
+    "target_feature_dimension": 4,
+    "hidden_history": 32,
+    "hidden_target": 64,
+    "batch_size": 64,
+    "epochs": 20,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "loss": "masked SmoothL1",
+    "gradient_clip_norm": 1.0,
+    "bootstrap_replicates": 10000,
+    "bootstrap_unit": "user",
+    "bootstrap_seed_scheme": "20261012 for adapted FitRec mean; seed plus reference index for model means; seed plus 100 plus comparison index for paired differences",
+    "execution_device": "cpu",
+    "reference_lightgbm": "K=5, intercept_speed, ridge_alpha=0.03",
+    "reference_hierarchical": "K=5, prior_precision_multiplier=0.03",
+    "reference_residual_tcn": "K=5, intercept_speed, ridge_alpha=0.1"
+  },
+  "environment": {
+    "python": "3.13.5",
+    "numpy": "2.1.3",
+    "torch": "2.14.0",
+    "lightgbm": "4.6.0",
+    "scikit_learn": "1.6.1"
+  },
+  "validation": {
+    "training_users": 470,
+    "validation_users": 118,
+    "training_validation_user_overlap": 0,
+    "test_users": 107,
+    "one_identical_target_workout_per_user": true,
+    "target_workouts_match_hierarchical_reference": true,
+    "valid_point_counts_match_locked_k5_reference_for_all_users": true,
+    "all_mae_values_finite": true,
+    "common_users_for_paired_comparisons": 107
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "analysis": "Adapted FitRec-LSTM baseline",
+  "stage": "User-disjoint development/validation fit followed by one locked-test evaluation",
+  "training": {
+    "epochs": 20,
+    "best_holdout_loss": 8.510596183733751,
+    "history": [
+      {
+        "epoch": 1,
+        "train_loss": 35.831584218968736,
+        "holdout_loss": 13.362358855662373
+      },
+      {
+        "epoch": 2,
+        "train_loss": 11.423249310001413,
+        "holdout_loss": 10.256273794982393
+      },
+      {
+        "epoch": 3,
+        "train_loss": 10.044736341593113,
+        "holdout_loss": 9.683167554564395
+      },
+      {
+        "epoch": 4,
+        "train_loss": 9.748313153043707,
+        "holdout_loss": 9.331079041217006
+      },
+      {
+        "epoch": 5,
+        "train_loss": 9.668960573191338,
+        "holdout_loss": 9.44812267109499
+      },
+      {
+        "epoch": 6,
+        "train_loss": 9.528040328558456,
+        "holdout_loss": 9.505350926501603
+      },
+      {
+        "epoch": 7,
+        "train_loss": 9.335467174966285,
+        "holdout_loss": 9.619070222822286
+      },
+      {
+        "epoch": 8,
+        "train_loss": 9.338076285225279,
+        "holdout_loss": 9.08446967669126
+      },
+      {
+        "epoch": 9,
+        "train_loss": 9.250604259840985,
+        "holdout_loss": 8.99560965521861
+      },
+      {
+        "epoch": 10,
+        "train_loss": 9.185693321075846,
+        "holdout_loss": 8.94578813294233
+      },
+      {
+        "epoch": 11,
+        "train_loss": 9.06057838746842,
+        "holdout_loss": 9.09803548371051
+      },
+      {
+        "epoch": 12,
+        "train_loss": 9.082812931309356,
+        "holdout_loss": 8.907297037415585
+      },
+      {
+        "epoch": 13,
+        "train_loss": 8.917682748525701,
+        "holdout_loss": 9.092835857369806
+      },
+      {
+        "epoch": 14,
+        "train_loss": 8.89651759127353,
+        "holdout_loss": 8.698442599194198
+      },
+      {
+        "epoch": 15,
+        "train_loss": 8.83804055604529,
+        "holdout_loss": 9.185414370843919
+      },
+      {
+        "epoch": 16,
+        "train_loss": 8.837490899765745,
+        "holdout_loss": 9.190803164142674
+      },
+      {
+        "epoch": 17,
+        "train_loss": 8.683457474759285,
+        "holdout_loss": 8.697087772821975
+      },
+      {
+        "epoch": 18,
+        "train_loss": 8.685417837919072,
+        "holdout_loss": 8.804091978881319
+      },
+      {
+        "epoch": 19,
+        "train_loss": 8.767585529291884,
+        "holdout_loss": 8.566792318376445
+      },
+      {
+        "epoch": 20,
+        "train_loss": 8.666780436292608,
+        "holdout_loss": 8.510596183733751
+      }
+    ],
+    "training_users": 470,
+    "validation_users": 118,
+    "user_overlap": 0,
+    "validation_fraction": 0.2
+  },
+  "summary": {
+    "model": "adapted_fitrec_lstm",
+    "k": 5,
+    "users": 107,
+    "mean_mae_bpm": 9.58080928125114,
+    "mean_mae_bootstrap_95ci": [
+      8.44663763937549,
+      10.788625764178338
+    ],
+    "target_workouts": 107,
+    "target_workout_guardrail": "one fixed test target per user; original valid HR points only"
+  },
+  "reference_summary": [
+    {
+      "model": "adapted_fitrec_lstm",
+      "users": 107,
+      "mean_mae_bpm": 9.58080928125114,
+      "mean_mae_bootstrap_95ci": [
+        8.44663763937549,
+        10.788625764178338
+      ]
+    },
+    {
+      "model": "hierarchical_linear",
+      "users": 107,
+      "mean_mae_bpm": 10.625639571857047,
+      "mean_mae_bootstrap_95ci": [
+        9.646532178515663,
+        11.676351681322362
+      ]
+    },
+    {
+      "model": "lightgbm",
+      "users": 107,
+      "mean_mae_bpm": 9.464423050564626,
+      "mean_mae_bootstrap_95ci": [
+        8.626633626770653,
+        10.366362323859102
+      ]
+    },
+    {
+      "model": "residual_tcn",
+      "users": 107,
+      "mean_mae_bpm": 9.411819151881398,
+      "mean_mae_bootstrap_95ci": [
+        8.333544336205943,
+        10.572771688613011
+      ]
+    }
+  ],
+  "paired_summary": [
+    {
+      "comparison": "hierarchical_linear_minus_adapted_fitrec_lstm",
+      "users": 107,
+      "mean_difference_bpm": 1.04483029060591,
+      "paired_bootstrap_95ci": [
+        0.07463405099717076,
+        2.0233474750749316
+      ]
+    },
+    {
+      "comparison": "lightgbm_minus_adapted_fitrec_lstm",
+      "users": 107,
+      "mean_difference_bpm": -0.11638623068651462,
+      "paired_bootstrap_95ci": [
+        -1.1055781070192974,
+        0.8311194894094528
+      ]
+    },
+    {
+      "comparison": "residual_tcn_minus_adapted_fitrec_lstm",
+      "users": 107,
+      "mean_difference_bpm": -0.1689901293697428,
+      "paired_bootstrap_95ci": [
+        -1.2891277277333366,
+        0.9135873422484277
+      ]
+    }
+  ],
+  "common_reference_users": 107,
+  "guardrail": "This is an adapted published-method baseline, not an exact reproduction of Ni et al. (2019)."
+}

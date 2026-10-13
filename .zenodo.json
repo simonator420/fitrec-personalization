@@ -1,0 +1,29 @@
+{
+  "title": "Personalizing Heart-Rate Prediction from Recent Workout History: A User-Disjoint FitRec Benchmark",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Salaj, Simon"
+    }
+  ],
+  "description": "Minimal reproducibility package for a user-disjoint benchmark of heart-rate prediction from recent personal workout history using public FitRec/Endomondo running data.",
+  "access_right": "open",
+  "license": "MIT",
+  "version": "v1.0.0",
+  "keywords": [
+    "heart-rate prediction",
+    "personalization",
+    "wearable data",
+    "FitRec",
+    "user-disjoint evaluation",
+    "LightGBM",
+    "LSTM"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/simonator420/fitrec-personalization",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

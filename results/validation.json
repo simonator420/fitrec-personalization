@@ -1,0 +1,25 @@
+{
+  "run_date": "2026-10-13",
+  "feature_matched_ablation": {
+    "output_directory": "feature_matched_ablation_v3",
+    "rows": 428,
+    "users": 107,
+    "four_rows_per_user": true,
+    "four_expected_cells_per_user": true,
+    "one_target_workout_per_user": true,
+    "all_mae_values_finite": true,
+    "linear_population_coefficients_finite": true,
+    "valid_point_counts_match_locked_k5_reference": true
+  },
+  "adapted_fitrec_lstm": {
+    "output_directory": "adapted_fitrec_lstm_k5_v2",
+    "users": 107,
+    "all_mae_values_finite": true,
+    "target_workout_keys_match_hierarchical_k5_reference": true,
+    "valid_point_counts_match_lightgbm_k5_reference": true,
+    "training_users": 470,
+    "validation_users": 118,
+    "training_validation_overlap": 0,
+    "paired_bootstrap_replicates": 10000
+  }
+}

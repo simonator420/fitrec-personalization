@@ -1,0 +1,4 @@
+model,users,mean_user_mae_bpm,paired_improvement_vs_hierarchical_bpm,paired_95ci_low,paired_95ci_high
+hierarchical_linear,107,10.625639571857047,0.0,0.0,0.0
+lightgbm,107,9.464423050564626,1.1612165212924248,0.7379033699999711,1.616963944403639
+residual_tcn,107,9.411819151881398,1.213820419975649,0.35,2.07

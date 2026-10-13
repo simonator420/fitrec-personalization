@@ -1,0 +1,115 @@
+{
+  "analysis": "Feature-matched model ablation",
+  "stage": "Post-lock secondary analysis; all population fitting used development data only",
+  "k": 5,
+  "coverage_threshold": 0.8,
+  "personalization_ridge_alpha": 0.03,
+  "feature_sets": {
+    "base": [
+      "speed_kmh",
+      "speed_sq",
+      "speed_lag30",
+      "speed_lag60",
+      "cumulative_speed",
+      "elapsed_minutes",
+      "log_elapsed"
+    ],
+    "extended": [
+      "speed_kmh",
+      "speed_sq",
+      "speed_lag30",
+      "speed_lag60",
+      "cumulative_speed",
+      "elapsed_minutes",
+      "log_elapsed",
+      "altitude_delta_m",
+      "grade_30s",
+      "vertical_rate_30s",
+      "day_of_year_sin",
+      "day_of_year_cos"
+    ]
+  },
+  "summary": [
+    {
+      "model": "hierarchical_linear",
+      "feature_set": "base",
+      "users": 107,
+      "mean_mae_bpm": 10.613230279834767,
+      "mean_mae_bootstrap_95ci": [
+        9.63068715468365,
+        11.633357479298027
+      ],
+      "improvement_vs_base_bpm": 0.0,
+      "improvement_vs_base_bootstrap_95ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "hierarchical_linear",
+      "feature_set": "extended",
+      "users": 107,
+      "mean_mae_bpm": 10.47221492631875,
+      "mean_mae_bootstrap_95ci": [
+        9.469119469657755,
+        11.539767643455047
+      ],
+      "improvement_vs_base_bpm": 0.14101535351601527,
+      "improvement_vs_base_bootstrap_95ci": [
+        0.05706333429349765,
+        0.2273244888012691
+      ]
+    },
+    {
+      "model": "lightgbm",
+      "feature_set": "base",
+      "users": 107,
+      "mean_mae_bpm": 9.712624376857573,
+      "mean_mae_bootstrap_95ci": [
+        8.838488158864807,
+        10.609653346852323
+      ],
+      "improvement_vs_base_bpm": 0.0,
+      "improvement_vs_base_bootstrap_95ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "model": "lightgbm",
+      "feature_set": "extended",
+      "users": 107,
+      "mean_mae_bpm": 9.440894905014316,
+      "mean_mae_bootstrap_95ci": [
+        8.632227053073978,
+        10.300959227855387
+      ],
+      "improvement_vs_base_bpm": 0.27172947184325635,
+      "improvement_vs_base_bootstrap_95ci": [
+        0.007478842614431954,
+        0.5515051340506465
+      ]
+    },
+    {
+      "comparison": "lightgbm_vs_hierarchical_linear",
+      "feature_set": "base",
+      "users": 107,
+      "improvement_bpm": 0.9006059029771927,
+      "improvement_bootstrap_95ci": [
+        0.5613046576740344,
+        1.2613358057575499
+      ]
+    },
+    {
+      "comparison": "lightgbm_vs_hierarchical_linear",
+      "feature_set": "extended",
+      "users": 107,
+      "improvement_bpm": 1.0313200213044338,
+      "improvement_bootstrap_95ci": [
+        0.6285174303563731,
+        1.482938537466331
+      ]
+    }
+  ],
+  "guardrail": "No test result was used for feature selection, tuning, or model choice."
+}
