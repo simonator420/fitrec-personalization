@@ -4,8 +4,10 @@ type: software
 title: "Personalizing Heart-Rate Prediction from Recent Workout History: A User-Disjoint FitRec Benchmark"
 authors:
   - family-names: Salaj
-    given-names: Simon
+    given-names: Šimon
+    orcid: "https://orcid.org/0009-0007-6825-1286"
 repository-code: "https://github.com/simonator420/fitrec-personalization"
+doi: "10.5281/zenodo.23334136"
 version: "v1.0.0"
 date-released: "2026-10-13"
 license: MIT

@@ -3,6 +3,10 @@
 This repository is prepared for archiving through the GitHub–Zenodo
 integration.
 
+Version `v1.0.0` is archived at
+<https://doi.org/10.5281/zenodo.23334136>. The steps below apply to later
+releases.
+
 ## Before the GitHub Release
 
 1. Confirm the repository is clean:

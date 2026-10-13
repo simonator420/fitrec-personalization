@@ -3,7 +3,8 @@
   "upload_type": "software",
   "creators": [
     {
-      "name": "Salaj, Simon"
+      "name": "Salaj, Šimon",
+      "orcid": "0009-0007-6825-1286"
     }
   ],
   "description": "Minimal reproducibility package for a user-disjoint benchmark of heart-rate prediction from recent personal workout history using public FitRec/Endomondo running data.",

@@ -1,6 +1,8 @@
 # Personalizing Heart-Rate Prediction from Recent Workout History
 ### A User-Disjoint FitRec Benchmark
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23334136.svg)](https://doi.org/10.5281/zenodo.23334136)
+
 ---
 
 This repository contains the minimal reproducibility files for a study of
@@ -115,8 +117,9 @@ tables, aggregate results, reference metrics, and analysis code. See
 
 ## Citation
 
-> Please cite the archived Zenodo release. The DOI will be added after the
-> first GitHub release is deposited.
+> Salaj, Š. (2026). *Personalizing Heart-Rate Prediction from Recent Workout
+> History: A User-Disjoint FitRec Benchmark* (v1.0.0) [Software]. Zenodo.
+> https://doi.org/10.5281/zenodo.23334136
 
 ---
 
